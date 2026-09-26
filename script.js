@@ -32,4 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+
+    if (contactForm && contactSuccess) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Clear inputs
+            contactForm.reset();
+
+            // Hide form with smooth transition or display success
+            contactSuccess.classList.remove('hidden');
+
+            // Scroll smoothly to success message if needed
+            contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    }
 });
